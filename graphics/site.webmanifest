@@ -1,0 +1,24 @@
+{
+  "name": "tins8 GmbH",
+  "short_name": "tins8",
+  "description": "Founder Control Plane for clear decisions from day one.",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "graphics/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "graphics/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#fffdf6",
+  "background_color": "#f7f4ea",
+  "display": "standalone"
+}
