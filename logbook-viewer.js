@@ -1,13 +1,14 @@
 const POSTS = {
-  "founders-control-plane": {
-    file: "blog/founders-control-plane.md",
-    fallbackTitle: "The Founders Control Plane",
+  "20260317-why-governance-should-be-built-in-from-day-1": {
+    file: "logbook/20260317-why-governance-should-be-built-in-from-day-1.md",
+    fallbackTitle: "Why Governance Should Be Built In From Day 1",
   },
 };
 
 const postTitle = document.querySelector("#post-title");
 const postMeta = document.querySelector("#post-meta");
 const postDescription = document.querySelector("#post-description");
+const postDivider = document.querySelector(".doc-divider");
 const postContent = document.querySelector("#post-content");
 const postError = document.querySelector("#post-error");
 const postLinks = document.querySelectorAll("[data-post-link]");
@@ -212,10 +213,13 @@ function markActivePost(postKey) {
 
 async function loadPost() {
   const params = new URLSearchParams(window.location.search);
-  const requestedPost = params.get("post") || "founders-control-plane";
-  const postKey = POSTS[requestedPost] ? requestedPost : "founders-control-plane";
+  const requestedPost =
+    params.get("post") || "20260317-why-governance-should-be-built-in-from-day-1";
+  const postKey = POSTS[requestedPost]
+    ? requestedPost
+    : "20260317-why-governance-should-be-built-in-from-day-1";
   const selected = POSTS[postKey];
-  const postUrl = `https://tins8.at/blog.html?post=${postKey}`;
+  const postUrl = `https://tins8.at/logbook.html?post=${postKey}`;
 
   markActivePost(postKey);
 
@@ -229,27 +233,28 @@ async function loadPost() {
     const { meta, body } = parseFrontMatter(raw);
 
     let cleanedBody = body.trim();
-    const bodyLines = cleanedBody.split("\n");
     const title = meta.title || selected.fallbackTitle;
+    const leadingHeadingMatch = cleanedBody.match(/^#\s+(.+?)(?:\n+|$)/);
 
     if (
-      bodyLines.length > 0 &&
-      normalizeTitle(bodyLines[0].replace(/^#+\s+/, "")) === normalizeTitle(title)
+      leadingHeadingMatch &&
+      normalizeTitle(leadingHeadingMatch[1]) === normalizeTitle(title)
     ) {
-      bodyLines.shift();
+      cleanedBody = cleanedBody.slice(leadingHeadingMatch[0].length).trim();
     }
-
-    cleanedBody = bodyLines.join("\n").trim();
 
     postTitle.textContent = title;
     postMeta.textContent = [meta.date, meta.tags].filter(Boolean).join(" · ");
     postDescription.textContent = meta.description || "";
     postDescription.hidden = !meta.description;
+    if (postDivider) {
+      postDivider.hidden = false;
+    }
     postContent.innerHTML = renderMarkdown(cleanedBody);
 
-    const pageTitle = `${title} | Notes | The Founders Control Plane`;
+    const pageTitle = `${title} | The Control Plane Logbook`;
     const pageDescription =
-      meta.description || "Notes and updates from building The Founders Control Plane.";
+      meta.description || "Logbook entries and updates from building The Founders Control Plane.";
 
     document.title = pageTitle;
     setMetaByName("description", pageDescription);
@@ -267,8 +272,11 @@ async function loadPost() {
   } catch (error) {
     console.error(error);
     postTitle.textContent = selected.fallbackTitle;
-    postMeta.textContent = "Notes entry could not be loaded.";
+    postMeta.textContent = "Logbook entry could not be loaded.";
     postDescription.hidden = true;
+    if (postDivider) {
+      postDivider.hidden = true;
+    }
     postContent.innerHTML = "";
     postError.hidden = false;
   }

@@ -7,13 +7,13 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://tins8.at/blog.html</loc>
+    <loc>https://tins8.at/logbook.html</loc>
     <lastmod>2026-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tins8.at/blog.html?post=founders-control-plane</loc>
+    <loc>https://tins8.at/logbook.html?post=20260317-why-governance-should-be-built-in-from-day-1</loc>
     <lastmod>2026-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
