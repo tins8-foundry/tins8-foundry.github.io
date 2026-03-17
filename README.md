@@ -17,16 +17,3 @@ Open <http://127.0.0.1:8000>.
 uv run pre-commit install
 uv run pre-commit run --all-files
 ```
-
-## Legal PDFs
-
-Put these files in `legal/`:
-
-- `about-and-terms.pdf`
-- `privacy-notice.pdf`
-- `terms-and-conditions.pdf`
-- `disclaimer.pdf`
-
-## GitHub Pages
-
-`Settings` -> `Pages` -> `Deploy from a branch` -> `main` + `/ (root)`.

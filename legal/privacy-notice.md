@@ -131,6 +131,6 @@ a. This Website may contain links to third-party websites. We have no control ov
 
 ## Section 8 - Contact Details
 
-a. For requests or questions regarding personal data processing, contact: [hello@tins8.at](mailto:hello@tins8.at)
+a. For requests or questions regarding personal data processing, contact: [hello@tins8.at](mailto: hello@tins8.at)
 
 b. Office address: (will be published before launch in 2026), Austria
