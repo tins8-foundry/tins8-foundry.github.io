@@ -119,7 +119,7 @@ a. Subject to legal requirements, you may request:
 
 b. We do not carry out solely automated decision-making (including profiling) that produces legal effects concerning you under Art 22 GDPR.
 
-c. To exercise rights, contact [hello@tins8.at](mailto:hello@tins8.at). You also have the right to lodge a complaint with the competent supervisory authority (for Austria: Datenschutzbehoerde).
+c. To exercise rights, contact [hello@tins8.at](mailto:hello@tins8.at). You also have the right to lodge a complaint with the competent supervisory authority (for Austria: Datenschutzbehörde).
 
 ## Section 6 - Updates to This Notice
 
@@ -132,5 +132,3 @@ a. This Website may contain links to third-party websites. We have no control ov
 ## Section 8 - Contact Details
 
 a. For requests or questions regarding personal data processing, contact: [hello@tins8.at](mailto: hello@tins8.at)
-
-b. Office address: (will be published before launch in 2026), Austria

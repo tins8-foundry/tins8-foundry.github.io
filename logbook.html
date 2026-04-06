@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Control Plane Logbook</title>
+    <title>The Founders Control Plane Logbook</title>
     <meta
       name="description"
-      content="The Control Plane Logbook: entries from building The Founders Control Plane."
+      content="The Founders Control Plane Logbook: entries from building The Founders Control Plane."
     />
     <meta name="author" content="tins8 GmbH" />
     <meta name="robots" content="index,follow,max-image-preview:large" />
@@ -14,10 +14,10 @@
     <link rel="canonical" href="https://tins8.at/logbook.html" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="The Control Plane Logbook" />
+    <meta property="og:title" content="The Founders Control Plane Logbook" />
     <meta
       property="og:description"
-      content="The Control Plane Logbook: entries from building The Founders Control Plane."
+      content="The Founders Control Plane Logbook: entries from building The Founders Control Plane."
     />
     <meta property="og:url" content="https://tins8.at/logbook.html" />
     <meta property="og:site_name" content="The Founders Control Plane" />
@@ -28,12 +28,12 @@
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="570" />
     <meta property="og:image:height" content="570" />
-    <meta property="og:image:alt" content="tins8 logo" />
+    <meta property="og:image:alt" content="The Founders Control Plane mark" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="The Control Plane Logbook" />
+    <meta name="twitter:title" content="The Founders Control Plane Logbook" />
     <meta
       name="twitter:description"
-      content="The Control Plane Logbook: entries from building The Founders Control Plane."
+      content="The Founders Control Plane Logbook: entries from building The Founders Control Plane."
     />
     <meta
       name="twitter:image"
@@ -56,7 +56,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Outfit:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -65,17 +65,21 @@
     <div class="background" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Founders Control Plane home">
+      <a class="brand" href="index.html" aria-label="The Founders Control Plane home">
         <img
           src="graphics/tins8_logo.png"
-          alt="tins8 logo"
+          alt="The Founders Control Plane mark"
           class="brand-logo"
           width="570"
           height="570"
         />
+        <span class="brand-title">
+          <span class="brand-kicker">The Founders</span>
+          <span class="brand-name">Control Plane</span>
+        </span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="index.html">Control Plane</a>
+        <a href="index.html">The Founders Control Plane</a>
         <a href="mailto:hello@tins8.at">Contact</a>
       </nav>
     </header>
@@ -83,10 +87,10 @@
     <main>
       <section class="hero reveal">
         <p class="eyebrow">Logbook</p>
-        <h1>The Control Plane Logbook.</h1>
+        <h1>The Founders Control Plane Logbook.</h1>
         <p class="lead">
-          Product updates, architecture notes, and operating lessons from
-          building The Founders Control Plane.
+          Technical notes on the control-plane model, governance boundaries,
+          and execution architecture behind The Founders Control Plane.
         </p>
       </section>
 
@@ -101,9 +105,14 @@
 
         <nav class="doc-switch" aria-label="Logbook switcher">
           <a
+            href="logbook.html?post=20260326-how-tins8-turns-company-intent-into-governed-execution"
+            data-post-link="20260326-how-tins8-turns-company-intent-into-governed-execution"
+            >Control-plane architecture for intent, reconciliation, and sandboxed execution</a
+          >
+          <a
             href="logbook.html?post=20260317-why-governance-should-be-built-in-from-day-1"
             data-post-link="20260317-why-governance-should-be-built-in-from-day-1"
-            >Why Governance Should Be Built In From Day 1</a
+            >Governance must be in the model from day 1</a
           >
         </nav>
         <p id="post-error" class="doc-error" hidden>

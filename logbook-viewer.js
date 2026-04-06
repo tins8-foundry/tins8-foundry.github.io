@@ -1,7 +1,12 @@
 const POSTS = {
+  "20260326-how-tins8-turns-company-intent-into-governed-execution": {
+    file: "logbook/20260326-how-tins8-turns-company-intent-into-governed-execution.md",
+    fallbackTitle:
+      "Control-Plane Architecture For Intent, Reconciliation, And Sandboxed Execution",
+  },
   "20260317-why-governance-should-be-built-in-from-day-1": {
     file: "logbook/20260317-why-governance-should-be-built-in-from-day-1.md",
-    fallbackTitle: "Why Governance Should Be Built In From Day 1",
+    fallbackTitle: "Governance Must Be In The Model From Day 1",
   },
 };
 
@@ -214,10 +219,11 @@ function markActivePost(postKey) {
 async function loadPost() {
   const params = new URLSearchParams(window.location.search);
   const requestedPost =
-    params.get("post") || "20260317-why-governance-should-be-built-in-from-day-1";
+    params.get("post") ||
+    "20260326-how-tins8-turns-company-intent-into-governed-execution";
   const postKey = POSTS[requestedPost]
     ? requestedPost
-    : "20260317-why-governance-should-be-built-in-from-day-1";
+    : "20260326-how-tins8-turns-company-intent-into-governed-execution";
   const selected = POSTS[postKey];
   const postUrl = `https://tins8.at/logbook.html?post=${postKey}`;
 
@@ -252,7 +258,7 @@ async function loadPost() {
     }
     postContent.innerHTML = renderMarkdown(cleanedBody);
 
-    const pageTitle = `${title} | The Control Plane Logbook`;
+    const pageTitle = `${title} | The Founders Control Plane Logbook`;
     const pageDescription =
       meta.description || "Logbook entries and updates from building The Founders Control Plane.";
 

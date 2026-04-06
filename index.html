@@ -6,23 +6,20 @@
     <title>The Founders Control Plane</title>
     <meta
       name="description"
-      content="The Founders Control Plane is a shared operating model for founder-led companies, starting with governance, provisioning, company context, and AI-assisted execution."
+      content="The Founders Control Plane keeps company intent, evidence, approvals, and execution connected so startups can run with less founder glue work."
     />
     <meta name="author" content="tins8 GmbH" />
     <meta name="robots" content="index,follow,max-image-preview:large" />
-    <meta name="theme-color" content="#dbe4ec" />
+    <meta name="theme-color" content="#10243a" />
     <link rel="canonical" href="https://tins8.at/" />
     <link rel="alternate" hreflang="en" href="https://tins8.at/" />
     <link rel="alternate" hreflang="x-default" href="https://tins8.at/" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="The Founders Control Plane"
-    />
+    <meta property="og:title" content="The Founders Control Plane" />
     <meta
       property="og:description"
-      content="The Founders Control Plane is a shared operating model for founder-led companies, starting with governance, provisioning, company context, and AI-assisted execution."
+      content="The Founders Control Plane keeps company intent, evidence, approvals, and execution connected so startups can run with less founder glue work."
     />
     <meta property="og:url" content="https://tins8.at/" />
     <meta property="og:site_name" content="The Founders Control Plane" />
@@ -33,15 +30,15 @@
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="570" />
     <meta property="og:image:height" content="570" />
-    <meta property="og:image:alt" content="tins8 logo" />
-    <meta name="twitter:card" content="summary_large_image" />
     <meta
-      name="twitter:title"
-      content="The Founders Control Plane"
+      property="og:image:alt"
+      content="The Founders Control Plane mark"
     />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Founders Control Plane" />
     <meta
       name="twitter:description"
-      content="The Founders Control Plane is a shared operating model for founder-led companies, starting with governance, provisioning, company context, and AI-assisted execution."
+      content="The Founders Control Plane keeps company intent, evidence, approvals, and execution connected so startups can run with less founder glue work."
     />
     <meta
       name="twitter:image"
@@ -64,7 +61,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Outfit:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -83,7 +80,7 @@
             "@type": "WebSite",
             "name": "The Founders Control Plane",
             "url": "https://tins8.at/",
-            "description": "The Founders Control Plane is a shared operating model for founder-led companies, starting with governance, provisioning, company context, and AI-assisted execution."
+            "description": "The Founders Control Plane keeps company intent, evidence, approvals, and execution connected so startups can run with less founder glue work."
           },
           {
             "@type": "SoftwareApplication",
@@ -94,7 +91,7 @@
               "@type": "Organization",
               "name": "tins8 GmbH"
             },
-            "description": "A shared operating model for founder-led companies, starting with governance, provisioning, company context, and AI-assisted execution."
+            "description": "The Founders Control Plane keeps company intent, evidence, approvals, and execution connected so startups can run with less founder glue work."
           }
         ]
       }
@@ -104,92 +101,123 @@
     <div class="background" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Founders Control Plane home">
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="The Founders Control Plane home"
+      >
         <img
           src="graphics/tins8_logo.png"
-          alt="tins8 logo"
+          alt="The Founders Control Plane mark"
           class="brand-logo"
           width="570"
           height="570"
         />
+        <span class="brand-title">
+          <span class="brand-kicker">The Founders</span>
+          <span class="brand-name">Control Plane</span>
+        </span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="logbook.html?post=20260317-why-governance-should-be-built-in-from-day-1">Logbook</a>
+        <a href="#why-it-exists">Why</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#architecture">Architecture</a>
+        <a href="logbook.html">Logbook</a>
         <a href="mailto:hello@tins8.at">Contact</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero reveal">
-        <p class="eyebrow">Control Plane</p>
-        <h1>
-          The Founders Control Plane.
-          <span class="coming-soon-badge">Coming soon</span>
-        </h1>
-        <p class="lead">
-          A shared operating model for founder-led companies. It helps keep
-          strategy, ownership, and operating reality in one place.
-        </p>
-        <p class="supporting-copy">
-          We are starting with central governance, a living company handbook,
-          automated resource provisioning, and bounded AI-assisted execution,
-          so teams can stay aligned as complexity grows.
-        </p>
-        <div class="hero-links" aria-label="Jump to key sections">
-          <a class="hero-link" href="#why-it-exists">Why it exists</a>
-          <a class="hero-link" href="#capabilities">What it includes</a>
-          <a class="hero-link" href="#architecture">How It's Built</a>
-        </div>
-        <div class="hero-panel">
-          <p class="panel-label">Core model</p>
-          <p class="panel-copy">
-            Capture founder intent, connect it to operational evidence, and
-            make it easier to compare what should be true with what is true.
-          </p>
-        </div>
-      </section>
+      <section class="hero reveal" aria-label="Hero">
+        <div class="hero-shell">
+          <div class="hero-copy">
+            <p class="eyebrow">The Founders Control Plane</p>
+            <h1>
+              Your company should not depend on founder glue work.
+              <span class="coming-soon-badge">Early build</span>
+            </h1>
+            <p class="lead">
+              Docs, dashboards, approvals, workflows, and AI helpers already
+              exist. What is missing is the operating layer that keeps them
+              pointed at the same company intent.
+            </p>
+            <p class="supporting-copy">
+              The Founders Control Plane keeps plans, evidence, reviews, and
+              next actions connected so a small team can make steady progress
+              without the founders manually holding everything together.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#how-it-works"
+                >See how it works</a
+              >
+              <a class="button button-secondary" href="mailto:hello@tins8.at"
+                >Talk to us</a
+              >
+            </div>
+            <div class="signal-strip" aria-label="Product promises">
+              <div class="signal-pill">Intent tied to execution</div>
+              <div class="signal-pill">Reviews that stay on cadence</div>
+              <div class="signal-pill">Human and AI action with guardrails</div>
+            </div>
+          </div>
 
-      <section
-        id="teaser"
-        class="section-shell intro-section reveal"
-        aria-label="Product introduction"
-      >
-        <div class="section-heading">
-          <p class="eyebrow">Control Plane</p>
-          <h2>
-            Three parts of the product, visible early.
-          </h2>
-          <p class="section-copy">
-            The product brings together a shared operating model, a living
-            company handbook, and AI-assisted execution in one operating
-            surface. It is designed to keep intended state and operational
-            reality close together, and is available as a self-hosted
-            deployment or as a managed offering, depending on company
-            requirements.
-          </p>
-        </div>
-        <div class="grid-section grid-3" aria-label="Top product pillars">
-          <article class="card">
-            <h3>Shared Operating Model</h3>
-            <p>
-              Keep strategy, ownership, constraints, and decisions visible in
-              one place.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Living Company Handbook</h3>
-            <p>
-              Keep roles, policies, operating context, and company memory live
-              instead of scattered across stale docs and chat.
-            </p>
-          </article>
-          <article class="card">
-            <h3>AI-Supported Execution</h3>
-            <p>
-              Support execution with context, evidence, and boundaries instead
-              of isolated automation.
-            </p>
-          </article>
+          <div class="hero-stage" aria-label="Operating model preview">
+            <article class="stage-card stage-card-primary">
+              <p class="panel-label">What the system keeps alive</p>
+              <div class="stage-list">
+                <div class="stage-step">
+                  <span class="stage-step-number">01</span>
+                  <div>
+                    <h2>Intent</h2>
+                    <p>
+                      Goals, owners, constraints, and review cadence stay
+                      explicit.
+                    </p>
+                  </div>
+                </div>
+                <div class="stage-step">
+                  <span class="stage-step-number">02</span>
+                  <div>
+                    <h2>Evidence</h2>
+                    <p>
+                      Source systems keep feeding the current state of the
+                      company.
+                    </p>
+                  </div>
+                </div>
+                <div class="stage-step">
+                  <span class="stage-step-number">03</span>
+                  <div>
+                    <h2>Reviews</h2>
+                    <p>
+                      Drift, blockers, and missing follow-through surface before
+                      they become founder cleanup work.
+                    </p>
+                  </div>
+                </div>
+                <div class="stage-step">
+                  <span class="stage-step-number">04</span>
+                  <div>
+                    <h2>Action</h2>
+                    <p>
+                      People, workflows, and AI can move inside clear policies
+                      and approvals.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="stage-card stage-card-accent">
+              <p class="panel-label">What founders get back</p>
+              <ul class="mini-list">
+                <li>fewer status chases and manual reminders</li>
+                <li>live visibility into what is drifting and why</li>
+                <li>clearer approvals for higher-risk actions</li>
+                <li>a company rhythm that survives a busy week</li>
+              </ul>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -200,102 +228,173 @@
       >
         <div class="section-heading">
           <p class="eyebrow">Why It Exists</p>
-          <h2>
-            Founders become the manual integration layer long before the
-            company looks large.
-          </h2>
+          <h2>Flexible tools still leave founders inventing the operating model by hand.</h2>
           <p class="section-copy">
-            Strategy lives in decks and docs, delivery lives in tickets and
-            repos, technical truth lives in infrastructure and observability,
-            and commercial truth lives in conversations, CRM, and spreadsheets.
-            The gap between intended state and actual state becomes hidden drag.
+            Most startups already have docs, project boards, dashboards, and
+            automations. The problem is not a lack of tools. The problem is
+            that intent, execution, and reality drift apart unless someone
+            keeps reconnecting them every week.
           </p>
         </div>
-        <div class="grid-section grid-3" aria-label="Why the problem appears">
+        <div class="grid-section" aria-label="Core founder pain">
           <article class="card">
-            <h3>Fragmented intent</h3>
+            <h3>Strategy gets scattered</h3>
             <p>
-              Goals, assumptions, priorities, and constraints sit across
-              scattered documents, dashboards, and chat threads.
+              Priorities, assumptions, and constraints live across decks, docs,
+              chats, and spreadsheets instead of one operating system.
             </p>
           </article>
           <article class="card">
-            <h3>Fragmented execution</h3>
+            <h3>Reviews lose momentum</h3>
             <p>
-              Roadmaps, tickets, deployments, incidents, and delivery signals
-              live in separate systems with different owners.
+              Check-ins, follow-ups, and decisions happen when someone remembers
+              to push them forward, not because the system expects them.
             </p>
           </article>
           <article class="card">
-            <h3>Fragmented reality</h3>
+            <h3>Execution loses context</h3>
             <p>
-              Customer feedback, operating metrics, and commercial signals keep
-              moving, but rarely map back to declared intent.
+              Teams stay busy, but work in product, operations, hiring, and
+              infrastructure is rarely tied back to the original company intent.
+            </p>
+          </article>
+          <article class="card">
+            <h3>The founder becomes the retry loop</h3>
+            <p>
+              The company keeps moving only because someone keeps reminding,
+              reconciling, approving, and stitching separate systems together.
             </p>
           </article>
         </div>
-        <p class="section-copy section-copy-compact">
-          The result is drift: teams stay busy, founders carry context
-          manually, and the company becomes harder to steer precisely when
-          coordination matters most.
-        </p>
       </section>
 
       <section
-        id="capabilities"
+        id="how-it-works"
         class="section-shell reveal"
-        aria-label="Product capabilities"
+        aria-label="How The Founders Control Plane works"
       >
         <div class="section-heading">
-          <p class="eyebrow">What It Includes</p>
-          <h2>A connected operating surface, not a loose feature list.</h2>
+          <p class="eyebrow">How It Works</p>
+          <h2>A simple loop for keeping the company running in sync.</h2>
           <p class="section-copy">
-            The first version spans the layers founders often have to hold
-            together early: company intent, governance, operational
-            foundations, data, and execution support.
+            The Founders Control Plane is not another general workspace. It is
+            the layer that keeps desired state, observed state, and next actions
+            continuously connected.
           </p>
         </div>
-        <div class="grid-section grid-3" aria-label="Product capability areas">
+        <div class="grid-section" aria-label="Core operating loop">
           <article class="card">
-            <h3>Intent Model</h3>
+            <h3>1. Define intent</h3>
             <p>
-              Make goals, initiatives, constraints, hypotheses, and review
-              cadences explicit.
+              Make goals, owners, operating boundaries, and review cadences
+              explicit instead of leaving them buried in planning artifacts.
             </p>
           </article>
           <article class="card">
-            <h3>Governance Workspace</h3>
+            <h3>2. Connect reality</h3>
             <p>
-              Record ownership, approval flows, policies, and decision paths so
-              less depends on founder memory.
+              Pull in signals from the systems already running the company so
+              the model reflects what is actually happening.
             </p>
           </article>
           <article class="card">
-            <h3>Provisioning Layer</h3>
+            <h3>3. Reconcile the gap</h3>
             <p>
-              Support repeatable environments, core services, and guardrailed
-              infrastructure aligned to how the company should operate.
+              Continuously compare intent and live evidence to surface drift,
+              blocked work, and stale assumptions while they are still fixable.
             </p>
           </article>
           <article class="card">
-            <h3>Data and Signal Foundation</h3>
+            <h3>4. Coordinate bounded action</h3>
             <p>
-              Bring together operational data, reporting logic, and evidence
-              streams so observed reality is easier to inspect.
+              Route the right next step through people, workflows, or AI with
+              policies, approvals, and provenance attached.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="outcomes"
+        class="section-shell section-contrast reveal"
+        aria-label="Operating outcomes"
+      >
+        <div class="section-heading">
+          <p class="eyebrow">What Changes</p>
+          <h2>The company keeps more of its operating discipline even when the founders are busy.</h2>
+          <p class="section-copy section-copy-on-dark">
+            The goal is not to automate everything. It is to create a clear,
+            reliable operating loop so plans stay live and execution stays
+            legible.
+          </p>
+        </div>
+        <div class="grid-section grid-3" aria-label="Product outcomes">
+          <article class="card outcome-card">
+            <h3>Plans stay active</h3>
+            <p>
+              Goals do not disappear into quarterly planning docs. They remain
+              attached to live evidence, ownership, and review rhythms.
+            </p>
+          </article>
+          <article class="card outcome-card">
+            <h3>Progress becomes visible</h3>
+            <p>
+              Teams can see what moved, what stalled, and what needs attention
+              without rebuilding the context from scratch every week.
+            </p>
+          </article>
+          <article class="card outcome-card">
+            <h3>Action stays governed</h3>
+            <p>
+              Humans and AI can help move the company forward without loose
+              prompts, vague authority, or hidden operational risk.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section
+        id="example"
+        class="section-shell reveal"
+        aria-label="Example use case"
+      >
+        <div class="section-heading">
+          <p class="eyebrow">Example</p>
+          <h2>Reduce cloud cost without turning it into another founder side quest.</h2>
+          <p class="section-copy">
+            A founder sets an objective to cut infrastructure spend by 20
+            percent. The Founders Control Plane keeps that objective live
+            instead of letting it dissolve across finance, engineering, and
+            operations.
+          </p>
+        </div>
+        <div class="grid-section" aria-label="Example flow">
+          <article class="card">
+            <h3>Watch the right signals</h3>
+            <p>
+              Cost, usage, ownership, service health, and risk stay linked to
+              the original objective.
             </p>
           </article>
           <article class="card">
-            <h3>AI Control Layer</h3>
+            <h3>Spot opportunities early</h3>
             <p>
-              Give human and AI actors more context, clearer boundaries, and
-              better traceability.
+              Underused resources, missing owners, and policy-safe changes are
+              surfaced before waste becomes normalized.
             </p>
           </article>
           <article class="card">
-            <h3>Reconciliation Loops</h3>
+            <h3>Route the next move</h3>
             <p>
-              Highlight blocked priorities, drift, missing support, and policy
-              conflicts so they can be reviewed and addressed.
+              The system can create tasks, trigger review, or propose bounded
+              execution depending on the policy in place.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Measure whether the objective closes</h3>
+            <p>
+              The team can see what changed, what helped, and whether the goal
+              is actually moving toward the target.
             </p>
           </article>
         </div>
@@ -304,19 +403,19 @@
       <section
         id="architecture"
         class="section-shell architecture-section reveal"
-        aria-label="How It's Built"
+        aria-label="Under the hood"
       >
         <div class="section-heading">
-          <p class="eyebrow">How It's Built</p>
-          <h2>Desired state, observed state, reconciliation.</h2>
+          <p class="eyebrow">Under The Hood</p>
+          <h2>Structured intent, connected evidence, bounded action.</h2>
           <p class="section-copy">
-            We are building the architecture more like a control plane than a
-            workflow engine. Intent becomes structured state, source systems
-            become evidence, reconciliation highlights drift, and humans or AI
-            can act within clear boundaries. Existing operational tools, from
-            spreadsheets and Notion to Slack, email, CRMs, issue trackers, and
-            cloud infrastructure, remain in use, but are connected through a
-            shared operating model and continuously reconciled against it.
+            The Founders Control Plane is being built more like a control plane
+            than a workflow builder. Intent is structured, source systems become
+            evidence, reconciliation stays continuous, and action happens inside
+            explicit scopes. The deeper technical detail lives in the
+            <a href="logbook.html?post=20260326-how-tins8-turns-company-intent-into-governed-execution"
+              >latest architecture note in the logbook</a
+            >.
           </p>
         </div>
         <div class="architecture-grid">
@@ -324,17 +423,16 @@
             <div class="architecture-layer">
               <p class="panel-label">1. Intent and Policy Layer</p>
               <p>
-                Goals, initiatives, roles, constraints, review cadences, and
-                operating rules are modeled as structured objects instead of
-                only living in documents.
+                Goals, roles, constraints, review cadences, and operating rules
+                are modeled as structured objects instead of only living in
+                documents.
               </p>
             </div>
             <div class="architecture-layer">
-              <p class="panel-label">2. Foundations and Integrations</p>
+              <p class="panel-label">2. Connected Systems</p>
               <p>
-                Governance records, provisioning systems, cloud infrastructure,
-                data pipelines, and business tools such as Notion, Salesforce,
-                and Jira provide the connected substrate underneath the
+                Governance records, business tools, provisioning systems, and
+                infrastructure provide the connected substrate underneath the
                 product.
               </p>
             </div>
@@ -355,8 +453,8 @@
             <div class="architecture-layer">
               <p class="panel-label">5. Human and AI Execution</p>
               <p>
-                Action runs through accountable humans and bounded AI
-                workflows, with decisions and outcomes fed back into the model.
+                Action runs through accountable humans and bounded AI workflows,
+                with decisions and outcomes fed back into the model.
               </p>
             </div>
           </div>
@@ -365,18 +463,18 @@
               <p class="panel-label">Key principles</p>
               <ul class="mini-list">
                 <li>Desired state and observed state stay separate, but linked.</li>
-                <li>Policies and evidence matter as much as chat and tasks.</li>
-                <li>Reconciliation is continuous, not a quarterly clean-up.</li>
+                <li>Policies and evidence matter as much as prompts and tasks.</li>
+                <li>Reconciliation is continuous, not a periodic clean-up.</li>
                 <li>AI operates inside explicit scopes instead of vague prompts.</li>
               </ul>
             </article>
             <article class="info-card">
               <p class="panel-label">What this enables</p>
               <ul class="mini-list">
-                <li>clearer escalation paths when reality diverges from intent</li>
-                <li>more accountability without pushing everything through founders</li>
-                <li>better structured human-agent collaboration</li>
-                <li>a company that is easier to understand and steer over time</li>
+                <li>less founder-held coordination work</li>
+                <li>clearer operating accountability</li>
+                <li>more useful human and AI collaboration</li>
+                <li>a company state that is easier to review over time</li>
               </ul>
             </article>
           </div>
@@ -385,13 +483,22 @@
 
       <section id="blog" class="notes-section reveal" aria-label="Logbook">
         <p class="eyebrow">Logbook</p>
-        <h2>Why Governance Should Be Built In From Day 1.</h2>
+        <h2>Follow the build as the operating model gets more concrete.</h2>
         <p class="lead">
-          A framing piece on why founders should build governance in from day
-          one, across cloud operations, delegation, and company handbook state.
+          The logbook covers the architecture, governance model, and design
+          choices behind The Founders Control Plane.
         </p>
         <div class="hero-links">
-          <a class="hero-link" href="logbook.html?post=20260317-why-governance-should-be-built-in-from-day-1">Logbook entry</a>
+          <a
+            class="hero-link"
+            href="logbook.html?post=20260326-how-tins8-turns-company-intent-into-governed-execution"
+            >Control-plane architecture</a
+          >
+          <a
+            class="hero-link"
+            href="logbook.html?post=20260317-why-governance-should-be-built-in-from-day-1"
+            >Governance from day 1</a
+          >
         </div>
       </section>
     </main>
