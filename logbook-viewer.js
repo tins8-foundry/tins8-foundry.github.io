@@ -1,8 +1,8 @@
 const POSTS = {
-  "20260326-how-tins8-turns-company-intent-into-governed-execution": {
-    file: "logbook/20260326-how-tins8-turns-company-intent-into-governed-execution.md",
+  "20260407-goals-own-reconciliation-projects-are-interventions": {
+    file: "logbook/20260407-goals-own-reconciliation-projects-are-interventions.md",
     fallbackTitle:
-      "Control-Plane Architecture For Intent, Reconciliation, And Sandboxed Execution",
+      "The Data Model For Automatable Agents, Planning, And Work Execution",
   },
   "20260317-why-governance-should-be-built-in-from-day-1": {
     file: "logbook/20260317-why-governance-should-be-built-in-from-day-1.md",
@@ -220,10 +220,10 @@ async function loadPost() {
   const params = new URLSearchParams(window.location.search);
   const requestedPost =
     params.get("post") ||
-    "20260326-how-tins8-turns-company-intent-into-governed-execution";
+    "20260407-goals-own-reconciliation-projects-are-interventions";
   const postKey = POSTS[requestedPost]
     ? requestedPost
-    : "20260326-how-tins8-turns-company-intent-into-governed-execution";
+    : "20260407-goals-own-reconciliation-projects-are-interventions";
   const selected = POSTS[postKey];
   const postUrl = `https://tins8.at/logbook.html?post=${postKey}`;
 
@@ -258,9 +258,9 @@ async function loadPost() {
     }
     postContent.innerHTML = renderMarkdown(cleanedBody);
 
-    const pageTitle = `${title} | The Founders Control Plane Logbook`;
+    const pageTitle = `${title} | The Logbook`;
     const pageDescription =
-      meta.description || "Logbook entries and updates from building The Founders Control Plane.";
+      meta.description || "The Logbook: a growing record of learnings and architectural formalization behind The Founders Control Plane.";
 
     document.title = pageTitle;
     setMetaByName("description", pageDescription);
@@ -278,7 +278,7 @@ async function loadPost() {
   } catch (error) {
     console.error(error);
     postTitle.textContent = selected.fallbackTitle;
-    postMeta.textContent = "Logbook entry could not be loaded.";
+    postMeta.textContent = "The Logbook entry could not be loaded.";
     postDescription.hidden = true;
     if (postDivider) {
       postDivider.hidden = true;
