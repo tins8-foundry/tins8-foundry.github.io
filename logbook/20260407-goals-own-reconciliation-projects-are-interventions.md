@@ -9,11 +9,15 @@ tags: Architecture, Data Model, Agents, Reconciliation, Sandboxing
 
 The control-plane model gets cleaner if the long-lived operational object is the goal rather than the project. A project is often useful, but it is not the primary owner of truth. The goal is the durable intent, the place where targets live, and the place where recurring reconciliation happens over time.
 
+What is missing in most teams is the operating layer that keeps goals, reality, and action in sync. The Founders Control Plane is being built as a control plane, not just a workflow layer.
+
 That shift matters because projects come and go. One mitigation effort can close, another can open later, and some reconciliations need no project at all. If reconciliation history is attached to projects, the story fragments across temporary containers. If reconciliation history is attached to the goal, one continuous operational record is preserved of how that goal was evaluated and steered over time.
 
 This is the right direction because the object model should stay familiar: goals, projects, tasks, updates, and visibility into progress are already a strong way to understand company work. The difference is that the participating actors here are not assumed to be only humans. Many of them are software systems, reconcilers, and bounded AI workers acting under explicit policy and authority.
 
 That foundation is not only conceptual. The current implementation already models goals as durable intent, supports recurring check-ins, and reflects achievement and mitigation work through linked projects and tasks. AI and agents now make it possible to extend that foundation by helping create work, keeping the operational record current, and continuously reconciling goals against live signals. What is still being expanded is the deeper reconciliation, agent execution, and governance layer around that base.
+
+That is the product shape this note is trying to make more precise: goals turn into formal check-ins, agent reasoning becomes visible agent plans through projects and tasks, and the system creates a traceable mitigation path from drift to execution.
 
 ## The Design Stance
 
@@ -42,6 +46,10 @@ That gives a cleaner control loop:
 7. Execute tasks through humans or agents inside policy
 8. Feed outcomes and evidence back into the next check-in
 
+A rough sketch of that object model looks like this:
+
+![Sketch of the data model showing Goal, GoalCheckIn, Project, Task, AgentExecutionRun, and supporting objects](graphics/data-model-sketch.svg "A sketch of the core data model: durable goals and targets feed check-ins, optional projects and tasks, bounded execution, and evidence.")
+
 This is the important semantic rule: projects are interventions created in response to what goal reconciliation finds, and tasks are the executable units that carry the intervention into the world.
 
 ## Staying Familiar
@@ -66,6 +74,8 @@ Targets define how the goal is evaluated. They are the contract the reconciler k
 
 A goal check-in is the periodic reconciliation snapshot of overall state against targets. Every agent reconciliation loop should create one. It records what was observed, how the targets evaluated, what decision followed, and which mitigation efforts, if any, were involved.
 
+Source systems keep observed reality current, but the goal check-in is the formal product record of what those signals mean and what the company decided to do next.
+
 ## Project
 
 A project is a bounded intervention created in response to what reconciliation found. It is not the owner of the goal history. It is the container for the mitigation effort itself.
@@ -73,6 +83,8 @@ A project is a bounded intervention created in response to what reconciliation f
 ## ProjectUpdate
 
 A project update is the regular status record for active work. It can be written on a schedule or after meaningful task changes. Unlike a goal check-in, it reports the state of the intervention itself rather than the overall evaluation of the goal.
+
+In practical terms, scheduled cycles can write goal check-ins for reconciliation and project updates for active work. Those are related rhythms, but they should remain distinct in the model because they answer different operational questions.
 
 ## Task
 
@@ -120,6 +132,23 @@ The goal check-ins can tell a continuous story:
 10. Target stable for three cycles
 
 That story still makes sense if one project closes, another project opens later, or some cycles need no project at all. The goal remains the owner of truth throughout.
+
+## Example: Lead Generation And Funnel Revision
+
+Consider a goal called Increase qualified inbound leads with a target of 120 qualified leads per month.
+
+The same model applies cleanly outside infrastructure:
+
+1. Observed current qualified leads at 87
+2. Identified drift against target for two review cycles
+3. Recorded the state in a goal check-in
+4. Reviewed campaign performance, landing-page conversion, and CRM handoff signals
+5. Opened a mitigation project to recover lead quality and volume
+6. Added tasks for revising the landing page offer, auditing ad spend, and checking the SaaS handoff flow
+7. Assigned some tasks to people and used agent assistance to prepare recommendations and draft follow-through work
+8. Recorded the resulting decisions and outcomes in the next check-in
+
+This example matters because it shows the broader category clearly. The model is not only for engineering or infrastructure operations. It also works for commercial goals where the company needs to connect one explicit intention to regular review, changing evidence, and visible follow-through.
 
 ## Why This Fits The Product Direction
 

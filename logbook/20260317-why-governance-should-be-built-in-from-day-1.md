@@ -13,9 +13,13 @@ The original promise behind this direction was to structure execution around goa
 
 AI made that idea more compelling because it could improve how goals and work are structured. A system could help refine goals, propose projects, suggest tasks, and keep parts of the operational record current. That was already useful, but it remained assistive. Humans still decided. Humans still executed. Humans still reconciled reality against intent.
 
+AI can help, but it is hard to trust when planning, execution scope, and evidence are not formalized. That is exactly where the governance problem stops being an abstract policy concern and becomes part of the product definition itself.
+
 That foundation is already real in the current implementation: goals are modeled as durable intent, recurring check-ins are supported, and company work can be reflected through linked projects and tasks for both achievement and mitigation.
 
 The Founders Control Plane goes further. It does not stop at planning and alignment. It introduces continuous reconciliation around goals. Goals become long-lived objects that must be revisited for validity and accuracy. Targets become machine-evaluable truth. AI and agents can help keep the operational record current, check live signals against intent, and produce a goal check-in with observed reality, comparison to target, decisions taken, and actions triggered.
+
+## Why This Becomes A Product Problem
 
 That creates the real shift. When drift is detected, it does not merely get pointed out for a later meeting. The goal can be adapted if intent has changed, or corrective action can be initiated by opening projects, generating tasks, and assigning execution to humans or agents. At that point the product is no longer only managing work. It is starting to manage reality against intent.
 
@@ -23,7 +27,18 @@ That is why governance has to be in the model from day 1. The first version of t
 
 This matters especially early. In a small company, there is usually no separate governance function. The same people deciding product direction are also deciding who gets access to production, which cloud accounts are active, how budgets are enforced, which vendors are trusted, which data may leave a boundary, and which changes should require explicit review. Those decisions are often reasonable in isolation, but they usually live in chat, memory, or setup work. That makes them hard to inspect and almost impossible to reconcile later.
 
+## What Governance Must Answer
+
 That problem gets sharper once the active users are not only humans. If an agent can reconcile a goal, detect drift, propose a mitigation, open a project, break the work into tasks, and execute one of those tasks, then governance has to answer more than "was there a workflow?" It has to answer which goal the agent was serving, which target deviation triggered the work, which mitigation path was chosen, which approvals applied, what execution boundary was granted, and what evidence proves the result.
+
+- which goal or intention the action serves
+- what drift, review, or decision triggered it
+- who or what actor is allowed to act
+- what approval, boundary, and evidence prove the result
+
+![Sketch of governed delegation from goal to review to bounded action and evidence](graphics/governance-model-sketch.svg "A sketch of governed delegation: intent, review, approval boundaries, action, and evidence stay connected.")
+
+## Provisioning Is The First Wedge
 
 Infrastructure provisioning is a good example because it exposes the problem clearly. Suppose a founder wants a new staging environment for a customer-facing integration. On paper, that sounds like a straightforward operational task. In reality, that request touches several governance surfaces at once: which team or agent may create the environment, which network boundaries apply, which cloud account it belongs to, which budgets or quotas constrain it, which secrets may be mounted into it, and whether the environment inherits a golden path or becomes an unmanaged exception. If all that is known is that someone requested "create staging," there is not enough context to govern the action. That only describes the workflow step, not the operating context around it.
 
@@ -39,7 +54,13 @@ This is where sandboxed execution becomes part of governance rather than just an
 
 Traceability has to be equally explicit. A mitigation should not live as an opaque burst of agent reasoning. If reconciliation finds drift, that should produce a goal check-in. If mitigation is needed, the plan should surface as a project with concrete tasks. If a task is executed by an agent, the execution should be tied back to the task, the project, the goal, the check-in that triggered it, and the evidence produced by the run. That chain is what turns automation into governed delegation instead of invisible autonomy.
 
+## Beyond Infrastructure
+
 The same shape extends beyond infrastructure provisioning. SaaS administration, access reviews, data movement, and AI-enabled execution all need the same kind of treatment. But provisioning is the right first wedge because it is concrete, high-impact, and easy to reason about. It sits exactly at the intersection of cost, delegation, risk, and technical autonomy. If environment creation, role assignment, and account-scoped provisioning cannot be governed with clarity, the product is not ready to govern more ambiguous forms of execution either.
+
+The same governance shape applies outside infrastructure too. If a lead-generation goal drifts and the product proposes campaign changes, landing-page revisions, or CRM routing changes, the company still needs clear authority, evidence, and reviewability around those actions. Infrastructure is only the clearest first wedge, not the boundary of the category.
+
+## The Practical Rule
 
 That leads to a practical design rule. If an action matters, it should be clear what intent it serves, who is allowed to perform it, under which boundary conditions it may happen, and what evidence will prove whether it ended in the correct state. If those questions cannot be answered from durable product state, then governance is still living outside the model.
 

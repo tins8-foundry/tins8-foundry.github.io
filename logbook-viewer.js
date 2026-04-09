@@ -51,6 +51,22 @@ function renderLink(label, href) {
   return escapeHtml(`[${label}](${href})`);
 }
 
+function renderImage(alt, src, caption = "") {
+  const safeSrc = escapeHtml(src);
+  const safeAlt = escapeHtml(alt);
+  const safeCaption = escapeHtml(caption);
+
+  if (!isExternalHref(src) && !isSafeLocalHref(src)) {
+    return escapeHtml(`![${alt}](${src})`);
+  }
+
+  if (safeCaption) {
+    return `<figure class="doc-figure"><img src="${safeSrc}" alt="${safeAlt}" loading="lazy" /><figcaption>${safeCaption}</figcaption></figure>`;
+  }
+
+  return `<figure class="doc-figure"><img src="${safeSrc}" alt="${safeAlt}" loading="lazy" /></figure>`;
+}
+
 function linkify(text) {
   return text.replace(
     /(https?:\/\/[^\s]+)/g,
@@ -187,6 +203,18 @@ function renderMarkdown(markdown) {
       return;
     }
 
+    const imageMatch = trimmed.match(
+      /^!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]+)")?\)$/,
+    );
+    if (imageMatch) {
+      flushParagraph();
+      flushUnorderedList();
+      flushOrderedList();
+      const [, alt, src, caption = ""] = imageMatch;
+      html += renderImage(alt, src, caption);
+      return;
+    }
+
     if (/^[-*]\s+/.test(trimmed)) {
       flushParagraph();
       flushOrderedList();
@@ -260,7 +288,8 @@ async function loadPost() {
 
     const pageTitle = `${title} | The Logbook`;
     const pageDescription =
-      meta.description || "The Logbook: a growing record of learnings and architectural formalization behind The Founders Control Plane.";
+      meta.description ||
+      "The Logbook: a growing record of learnings and architectural formalization behind The Founders Control Plane.";
 
     document.title = pageTitle;
     setMetaByName("description", pageDescription);
