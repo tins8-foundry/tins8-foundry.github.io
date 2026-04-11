@@ -1,166 +1,172 @@
 ---
-title: The Data Model For Automatable Agents, Planning, And Work Execution
+title: A Data Model For Goals, Work, And Agents
 date: April 7, 2026
-description: A formal data model for The Founders Control Plane where goals are durable, reconciliation creates check-ins, agent mitigation plans surface as projects and tasks, and execution runs inside traceable sandboxes.
-tags: Architecture, Data Model, Agents, Reconciliation, Sandboxing
+description: A simple model where goals hold the long-lived truth, reviews create check-ins, projects and tasks carry the current work, and agents run inside clear sandboxes.
+tags: Architecture, Data Model, Agents, Reviews, Sandboxing
 ---
 
-# The Data Model For Automatable Agents, Planning, And Work Execution
+# A Data Model For Goals, Work, And Agents
 
-The control-plane model gets cleaner if the long-lived operational object is the goal rather than the project. A project is often useful, but it is not the primary owner of truth. The goal is the durable intent, the place where targets live, and the place where recurring reconciliation happens over time.
+Most teams already understand goals, projects, tasks, and updates.
 
-What is missing in most teams is the operating layer that keeps goals, reality, and action in sync. The Founders Control Plane is being built as a control plane, not just a workflow layer.
+The main question is not whether those objects are useful. The question is where the long-lived truth should live.
 
-That shift matters because projects come and go. One mitigation effort can close, another can open later, and some reconciliations need no project at all. If reconciliation history is attached to projects, the story fragments across temporary containers. If reconciliation history is attached to the goal, one continuous operational record is preserved of how that goal was evaluated and steered over time.
+The model gets much cleaner when the goal is the long-lived object, not the project.
 
-This is the right direction because the object model should stay familiar: goals, projects, tasks, updates, and visibility into progress are already a strong way to understand company work. The difference is that the participating actors here are not assumed to be only humans. Many of them are software systems, reconcilers, and bounded AI workers acting under explicit policy and authority.
+A project may matter a lot, but it is still only the current response to a goal.
 
-That foundation is not only conceptual. The current implementation already models goals as durable intent, supports recurring check-ins, and reflects achievement and mitigation work through linked projects and tasks. AI and agents now make it possible to extend that foundation by helping create work, keeping the operational record current, and continuously reconciling goals against live signals. What is still being expanded is the deeper reconciliation, agent execution, and governance layer around that base.
+The goal is the place that should hold the long story: what the company wants, how it will be judged, and how that goal has been reviewed over time.
 
-That is the product shape this note is trying to make more precise: goals turn into formal check-ins, agent reasoning becomes visible agent plans through projects and tasks, and the system creates a traceable mitigation path from drift to execution.
+## The Main Rule
 
-## The Design Stance
+Here is the simple rule behind the model:
 
-The core stance is simple:
+1. goals hold the long-lived story
+2. check-ins record each review
+3. projects hold the current response
+4. tasks make the work clear
+5. agents do tasks inside bounded sandboxes
 
-1. Goals own durable intent and reconciliation history.
-2. Check-ins are the formal record of each reconciliation loop.
-3. Projects are bounded mitigation or improvement efforts opened in response to reconciliation.
-4. Tasks make the planned work legible and executable.
-5. Agents execute tasks inside sandboxes, not through broad standing authority.
+This matters because projects come and go.
 
-A goal is durable intent. It owns targets. It receives recurring check-ins. It remains the stable reference point even when the operating environment changes.
+One project may close. Another may open later. Some review cycles may need no project at all.
 
-A project is an optional bounded mitigation or improvement effort in support of the goal. It can be opened, progressed, and closed. It is linked from the goal, but it is not the main place where reconciliation history lives.
+If the history lives on the project, the story gets split across temporary containers.
 
-This matters because agent planning should not stay hidden inside a conversation or internal chain of thought. If an agent determines that mitigation is needed, the plan should surface in the product as a project with tasks. That makes the intervention visible, reviewable, assignable, and traceable.
+If the history lives on the goal, the company keeps one continuous record of how that goal was judged and steered over time.
 
-That gives a cleaner control loop:
+## The Core Loop
 
-1. Reconcile the goal
-2. Evaluate its targets
-3. Record the reconciliation as a goal check-in
-4. Decide whether action is needed
-5. Optionally create or update a project
-6. Materialize mitigation as tasks
-7. Execute tasks through humans or agents inside policy
-8. Feed outcomes and evidence back into the next check-in
+The loop is simple:
 
-A rough sketch of that object model looks like this:
+1. review the goal
+2. compare real signals to the target
+3. write a goal check-in
+4. decide whether action is needed
+5. if needed, open or update a project
+6. turn the plan into tasks
+7. let people or agents do the tasks
+8. feed the result into the next review
 
-![Sketch of the data model showing Goal, GoalCheckIn, Project, Task, AgentExecutionRun, and supporting objects](graphics/data-model-sketch.svg "A sketch of the core data model: durable goals and targets feed check-ins, optional projects and tasks, bounded execution, and evidence.")
+That keeps the goal at the center while still making the work concrete.
 
-This is the important semantic rule: projects are interventions created in response to what goal reconciliation finds, and tasks are the executable units that carry the intervention into the world.
+![Sketch of the data model showing Goal, GoalCheckIn, Project, Task, AgentExecutionRun, and supporting objects](graphics/data-model-sketch.svg "A sketch of the core data model: goals at the center, check-ins over time, projects and tasks as current work, and bounded agent runs with evidence.")
 
-## Staying Familiar
-
-The object model should stay familiar. Goals, projects, tasks, and updates are already a strong way to understand operational work. We should keep that shape. The control-plane difference is that the model becomes more formal about desired state, observed state, recurring reconciliation, sandboxed execution, and evidence.
-
-Some users are founders or operators. Some users are reconcilers, software systems, or bounded AI workers. The platform should model all of them explicitly rather than pretending everything is a human status update.
-
-## Core Objects
-
-At this stage, the important thing is the role of each object rather than its final field list.
+## What Each Object Does
 
 ## Goal
 
-The goal is the durable operational object. It is the owner of truth for the intent being managed.
+The goal is the main record.
+
+It holds the goal itself, the reason behind it, the target, and the history of reviews.
 
 ## Target
 
-Targets define how the goal is evaluated. They are the contract the reconciler keeps testing against observed reality.
+The target says how the goal is judged.
+
+It is the line the system checks against reality.
 
 ## GoalCheckIn
 
-A goal check-in is the periodic reconciliation snapshot of overall state against targets. Every agent reconciliation loop should create one. It records what was observed, how the targets evaluated, what decision followed, and which mitigation efforts, if any, were involved.
+A goal check-in is the record of one review cycle.
 
-Source systems keep observed reality current, but the goal check-in is the formal product record of what those signals mean and what the company decided to do next.
+It says what was observed, how the goal was judged, what decision followed, and whether follow-up work was opened.
 
 ## Project
 
-A project is a bounded intervention created in response to what reconciliation found. It is not the owner of the goal history. It is the container for the mitigation effort itself.
+A project is the current response to what the review found.
+
+It is not the owner of the full history. It is the container for the work itself.
 
 ## ProjectUpdate
 
-A project update is the regular status record for active work. It can be written on a schedule or after meaningful task changes. Unlike a goal check-in, it reports the state of the intervention itself rather than the overall evaluation of the goal.
+A project update reports the state of the current work.
 
-In practical terms, scheduled cycles can write goal check-ins for reconciliation and project updates for active work. Those are related rhythms, but they should remain distinct in the model because they answer different operational questions.
+That is different from a goal check-in, which reports the state of the goal.
 
 ## Task
 
-Tasks are where planned work becomes legible. If an agent proposes mitigation, that plan should be reflected as project tasks rather than remaining implicit. This is the bridge between planning and execution.
+Tasks make the plan visible and executable.
+
+If an agent suggests a fix, that fix should show up as tasks in the product rather than staying hidden in a chat or internal reasoning.
 
 ## AgentExecutionRun
 
-An agent execution run is the formal record of bounded action. The agent does not receive broad standing authority. It receives a sandbox for a specific task, with explicit limits, durable artifacts, and a result that can be reviewed.
+An agent run is the saved record of bounded action.
+
+The agent does not get broad open-ended access. It gets a sandbox for one task, with clear limits, saved artifacts, and a result people can review.
 
 ## EvidenceRef
 
-Evidence references make the model auditable. Check-ins, projects, tasks, approvals, and execution runs should all be able to point at the underlying artifacts that support them.
+Evidence links the model back to real artifacts.
 
-## Formalizing The Logbook
+Check-ins, projects, tasks, approvals, and agent runs should all be able to point at the proof behind them.
 
-The logbook should become more formal around this distinction.
+## Why This Shape Helps
 
-A goal check-in is the durable operational logbook. It is the authoritative history of how a goal was evaluated over time.
+This model stays familiar.
 
-A project update is a progress report on a mitigation effort. It can also be produced regularly and automatically while work is active.
+It still uses goals, projects, tasks, and updates.
 
-That means one goal check-in may reference:
+The difference is that it is stricter about where truth lives.
 
-- no project
-- one active project
-- multiple linked projects
+The goal owns the long-lived story.
 
-The durable logbook belongs to the goal. Project updates and task runs are linked evidence inside that larger story. In practice, both goal check-ins and project updates can happen on regular automated schedules, but they answer different questions.
+The project owns the current response.
+
+That makes change easier because the company can replace the work without losing the reason behind it.
 
 ## Example: Cloud Cost Control
 
-Consider a goal called Keep cloud spend under control with a target of monthly spend below 2K.
+Take a goal like Keep cloud spend under 2K per month.
 
-The goal check-ins can tell a continuous story:
+The check-ins might tell a story like this:
 
-1. Observed current spend at 2.8K
-2. Identified deviation against target
-3. Opened mitigation project Reduce cloud costs
-4. Added tasks for rightsizing, idle resource cleanup, and storage tiering
-5. Executed rightsizing task through an agent sandbox with cost tooling and limited credentials
-6. Recorded artifacts and spend reduction evidence
-7. Spend down to 2.2K
-8. Opened follow-up task for storage tiering
-9. Spend down to 1.9K
-10. Target stable for three cycles
+1. spend is at 2.8K
+2. the goal is off track
+3. a cost-reduction project is opened
+4. tasks are created for rightsizing, cleanup, and storage tiering
+5. one task is run in an agent sandbox
+6. evidence is saved
+7. spend drops to 2.2K
+8. a follow-up task is opened
+9. spend drops to 1.9K
+10. the goal stays stable for three cycles
 
-That story still makes sense if one project closes, another project opens later, or some cycles need no project at all. The goal remains the owner of truth throughout.
+That story still works if one project closes and another opens later.
 
-## Example: Lead Generation And Funnel Revision
+The goal remains the main record the whole time.
 
-Consider a goal called Increase qualified inbound leads with a target of 120 qualified leads per month.
+## Example: Lead Growth
 
-The same model applies cleanly outside infrastructure:
+Take a goal like Increase qualified inbound leads to 120 per month.
 
-1. Observed current qualified leads at 87
-2. Identified drift against target for two review cycles
-3. Recorded the state in a goal check-in
-4. Reviewed campaign performance, landing-page conversion, and CRM handoff signals
-5. Opened a mitigation project to recover lead quality and volume
-6. Added tasks for revising the landing page offer, auditing ad spend, and checking the SaaS handoff flow
-7. Assigned some tasks to people and used agent assistance to prepare recommendations and draft follow-through work
-8. Recorded the resulting decisions and outcomes in the next check-in
+The same model works cleanly:
 
-This example matters because it shows the broader category clearly. The model is not only for engineering or infrastructure operations. It also works for commercial goals where the company needs to connect one explicit intention to regular review, changing evidence, and visible follow-through.
+1. current leads are 87
+2. the goal has been off track for two review cycles
+3. the system writes a goal check-in
+4. the team reviews campaign results, landing-page conversion, and CRM handoff signals
+5. a project is opened to recover lead quality and volume
+6. tasks are created for the landing page, ad spend, and handoff flow
+7. some tasks go to people and some are prepared with agent help
+8. the next check-in records what changed and what happened
 
-## Why This Fits The Product Direction
+This example matters because it shows that the model is not only for engineering work.
 
-This keeps the center of gravity where it belongs: on enduring intent rather than temporary work containers.
+It also works for commercial goals where the team needs one clear link between the goal, the review, the follow-up work, and the result.
 
-It also aligns with the broader control-plane architecture:
+## Why This Fits The Product
 
-- goals are continuously reconciled
-- every reconciliation loop is recorded as a goal check-in
-- projects are bounded interventions
-- tasks are the visible form of agent planning
-- agents execute tasks inside sandboxes
-- evidence and provenance are attached to each meaningful change
+This keeps the center of gravity where it belongs: on the goal rather than the current work container.
 
-That is the stronger product shape. It keeps a familiar goal-project-task shape, but adapts it for a world where many of the active users are agents rather than only humans. The result is a system that feels familiar at the object level while remaining much more formal about reconciliation, planning, authority, and durable operational memory.
+It also fits the broader product direction:
+
+- goals are reviewed again and again
+- each review becomes a goal check-in
+- projects hold the current response
+- tasks make that response clear
+- agents do tasks inside sandboxes
+- evidence is attached to meaningful changes
+
+That keeps the model familiar while making it strong enough for a world where both people and agents may carry the work.

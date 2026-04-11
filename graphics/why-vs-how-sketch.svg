@@ -1,0 +1,521 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1320"
+  height="920"
+  viewBox="0 0 1320 920"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Keep the why clear as work changes</title>
+  <desc id="desc">
+    A hand-drawn style sketch with three examples. In each row, the goal and
+    why stay visible on the left while the current setup on the right can
+    change. The examples are lead growth, staging setup, and cloud cost.
+  </desc>
+
+  <defs>
+    <linearGradient id="paper" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffaf1" />
+      <stop offset="100%" stop-color="#f2e8d7" />
+    </linearGradient>
+    <linearGradient id="goalCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#eef5f8" />
+    </linearGradient>
+    <linearGradient id="growthCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff9ea" />
+      <stop offset="100%" stop-color="#f4ead2" />
+    </linearGradient>
+    <linearGradient id="infraCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eef6fa" />
+      <stop offset="100%" stop-color="#deebf3" />
+    </linearGradient>
+    <linearGradient id="costCard" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eef8f2" />
+      <stop offset="100%" stop-color="#dceee4" />
+    </linearGradient>
+    <linearGradient id="note" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff1b9" />
+      <stop offset="100%" stop-color="#f6db73" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="135%">
+      <feDropShadow
+        dx="0"
+        dy="12"
+        stdDeviation="12"
+        flood-color="#10243a"
+        flood-opacity="0.12"
+      />
+    </filter>
+  </defs>
+
+  <rect width="1320" height="920" rx="36" fill="url(#paper)" />
+  <path
+    d="M46 92 C242 42, 474 34, 660 64 S1042 104, 1270 72"
+    fill="none"
+    stroke="#d7cab2"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-dasharray="2 16"
+    opacity="0.75"
+  />
+
+  <text
+    x="84"
+    y="90"
+    fill="#0f5063"
+    font-family="Outfit, Manrope, sans-serif"
+    font-size="34"
+    font-weight="800"
+  >
+    Keep The Why. Change The Setup.
+  </text>
+  <text
+    x="84"
+    y="124"
+    fill="#546070"
+    font-family="Manrope, Arial, sans-serif"
+    font-size="18"
+    font-weight="600"
+  >
+    The goal and the reason behind it should stay visible even when the current setup changes.
+  </text>
+
+  <g transform="rotate(-1.2 208 164)">
+    <rect
+      x="86"
+      y="144"
+      width="254"
+      height="54"
+      rx="27"
+      fill="#eef7f9"
+      stroke="#0f6c78"
+      stroke-width="2.6"
+    />
+    <text
+      x="212"
+      y="178"
+      fill="#0f6c78"
+      text-anchor="middle"
+      font-family="Outfit, Manrope, sans-serif"
+      font-size="21"
+      font-weight="800"
+    >
+      Goal + Why
+    </text>
+  </g>
+
+  <g transform="rotate(1 846 164)">
+    <rect
+      x="702"
+      y="144"
+      width="288"
+      height="54"
+      rx="27"
+      fill="#fff8e7"
+      stroke="#9b6111"
+      stroke-width="2.6"
+    />
+    <text
+      x="846"
+      y="178"
+      fill="#9b6111"
+      text-anchor="middle"
+      font-family="Outfit, Manrope, sans-serif"
+      font-size="21"
+      font-weight="800"
+    >
+      Current Setup
+    </text>
+  </g>
+
+  <g filter="url(#shadow)" transform="rotate(4 1140 146)">
+    <rect
+      x="1012"
+      y="56"
+      width="248"
+      height="170"
+      rx="18"
+      fill="url(#note)"
+      stroke="#80500a"
+      stroke-width="2.8"
+    />
+    <text
+      x="1038"
+      y="98"
+      fill="#6f470b"
+      font-family="Outfit, Manrope, sans-serif"
+      font-size="19"
+      font-weight="800"
+    >
+      Most docs describe
+    </text>
+    <text
+      x="1038"
+      y="124"
+      fill="#6f470b"
+      font-family="Outfit, Manrope, sans-serif"
+      font-size="19"
+      font-weight="800"
+    >
+      the right side:
+    </text>
+    <text
+      fill="#4f3c1d"
+      font-family="Manrope, Arial, sans-serif"
+      font-size="18"
+    >
+      <tspan x="1038" y="158">Handbooks</tspan>
+      <tspan x="1038" y="184">Workflow notes</tspan>
+      <tspan x="1038" y="210">Tool stacks</tspan>
+    </text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <g transform="rotate(-1.4 316 304)">
+      <rect
+        x="82"
+        y="218"
+        width="468"
+        height="168"
+        rx="24"
+        fill="url(#goalCard)"
+        stroke="#17354d"
+        stroke-width="3.2"
+      />
+      <rect
+        x="86"
+        y="222"
+        width="468"
+        height="168"
+        rx="24"
+        fill="none"
+        stroke="#17354d"
+        stroke-width="1.3"
+        opacity="0.4"
+      />
+      <text
+        x="114"
+        y="260"
+        fill="#0f6c78"
+        font-family="Outfit, Manrope, sans-serif"
+        font-size="20"
+        font-weight="800"
+      >
+        Growth Goal
+      </text>
+      <text
+        fill="#10243a"
+        font-family="Manrope, Arial, sans-serif"
+        font-size="24"
+        font-weight="700"
+      >
+        <tspan x="114" y="297">120 qualified leads per month</tspan>
+      </text>
+      <text
+        fill="#546070"
+        font-family="Manrope, Arial, sans-serif"
+        font-size="18"
+      >
+        <tspan x="114" y="330">Why: steady demand beyond</tspan>
+        <tspan x="114" y="355">founder-led sales</tspan>
+      </text>
+    </g>
+
+    <g transform="rotate(1.1 960 304)">
+      <rect
+        x="702"
+        y="218"
+        width="528"
+        height="168"
+        rx="24"
+        fill="url(#growthCard)"
+        stroke="#80500a"
+        stroke-width="3.2"
+      />
+      <rect
+        x="706"
+        y="222"
+        width="528"
+        height="168"
+        rx="24"
+        fill="none"
+        stroke="#80500a"
+        stroke-width="1.3"
+        opacity="0.4"
+      />
+      <text
+        x="734"
+        y="260"
+        fill="#9b6111"
+        font-family="Outfit, Manrope, sans-serif"
+        font-size="20"
+        font-weight="800"
+      >
+        Current setup
+      </text>
+      <text
+        fill="#10243a"
+        font-family="Manrope, Arial, sans-serif"
+        font-size="22"
+        font-weight="700"
+      >
+        <tspan x="734" y="296">Landing page + ads + CRM routing</tspan>
+      </text>
+      <text
+        fill="#6b5a36"
+        font-family="Manrope, Arial, sans-serif"
+        font-size="17"
+      >
+        <tspan x="734" y="329">Useful today, change it when results drift</tspan>
+        <tspan x="734" y="354">The funnel is not the goal</tspan>
+      </text>
+    </g>
+
+    <g transform="rotate(1.1 316 514)">
+      <rect
+        x="82"
+        y="430"
+        width="468"
+        height="168"
+        rx="24"
+        fill="url(#goalCard)"
+        stroke="#17354d"
+        stroke-width="3.2"
+      />
+      <rect
+        x="86"
+        y="434"
+        width="468"
+        height="168"
+        rx="24"
+        fill="none"
+        stroke="#17354d"
+        stroke-width="1.3"
+        opacity="0.4"
+      />
+      <text
+        x="114"
+        y="472"
+        fill="#0f6c78"
+        font-family="Outfit, Manrope, sans-serif"
+        font-size="20"
+        font-weight="800"
+      >
+        Infra Goal
+      </text>
+      <text
+        fill="#10243a"
+        font-family="Manrope, Arial, sans-serif"
+        font-size="24"
+        font-weight="700"
+      >
+        <tspan x="114" y="509">Safe staging for a customer</tspan>
+        <tspan x="114" y="536">integration</tspan>
+      </text>
+      <text
+        fill="#546070"
+        font-family="Manrope, Arial, sans-serif"
+        font-size="18"
+      >
+        <tspan x="114" y="568">Why: ship faster without giving</tspan>
+        <tspan x="114" y="593">risky open-ended access</tspan>
+      </text>
+    </g>
+
+    <g transform="rotate(-1.3 960 514)">
+      <rect
+        x="702"
+        y="430"
+        width="528"
+        height="168"
+        rx="24"
+        fill="url(#infraCard)"
+        stroke="#0f6c78"
+        stroke-width="3.2"
+      />
+      <rect
+        x="706"
+        y="434"
+        width="528"
+        height="168"
+        rx="24"
+        fill="none"
+        stroke="#0f6c78"
+        stroke-width="1.3"
+        opacity="0.4"
+      />
+      <text
+        x="734"
+        y="472"
+        fill="#0f6c78"
+        font-family="Outfit, Manrope, sans-serif"
+        font-size="20"
+        font-weight="800"
+      >
+        Current setup
+      </text>
+      <text
+        fill="#10243a"
+        font-family="Manrope, Arial, sans-serif"
+        font-size="22"
+        font-weight="700"
+      >
+        <tspan x="734" y="508">Cloud account + network + secrets</tspan>
+      </text>
+      <text
+        fill="#546070"
+        font-family="Manrope, Arial, sans-serif"
+        font-size="17"
+      >
+        <tspan x="734" y="541">Approval path and tooling may change</tspan>
+        <tspan x="734" y="566">The goal is a safe staging path</tspan>
+      </text>
+    </g>
+
+    <g transform="rotate(-1 316 724)">
+      <rect
+        x="82"
+        y="642"
+        width="468"
+        height="168"
+        rx="24"
+        fill="url(#goalCard)"
+        stroke="#17354d"
+        stroke-width="3.2"
+      />
+      <rect
+        x="86"
+        y="646"
+        width="468"
+        height="168"
+        rx="24"
+        fill="none"
+        stroke="#17354d"
+        stroke-width="1.3"
+        opacity="0.4"
+      />
+      <text
+        x="114"
+        y="684"
+        fill="#0f6c78"
+        font-family="Outfit, Manrope, sans-serif"
+        font-size="20"
+        font-weight="800"
+      >
+        Cost Goal
+      </text>
+      <text
+        fill="#10243a"
+        font-family="Manrope, Arial, sans-serif"
+        font-size="24"
+        font-weight="700"
+      >
+        <tspan x="114" y="721">Cloud spend under 2K / month</tspan>
+      </text>
+      <text
+        fill="#546070"
+        font-family="Manrope, Arial, sans-serif"
+        font-size="18"
+      >
+        <tspan x="114" y="754">Why: protect margin and keep</tspan>
+        <tspan x="114" y="779">attention on better work</tspan>
+      </text>
+    </g>
+
+    <g transform="rotate(1.2 960 724)">
+      <rect
+        x="702"
+        y="642"
+        width="528"
+        height="168"
+        rx="24"
+        fill="url(#costCard)"
+        stroke="#3d7a57"
+        stroke-width="3.2"
+      />
+      <rect
+        x="706"
+        y="646"
+        width="528"
+        height="168"
+        rx="24"
+        fill="none"
+        stroke="#3d7a57"
+        stroke-width="1.3"
+        opacity="0.4"
+      />
+      <text
+        x="734"
+        y="684"
+        fill="#2f6a4a"
+        font-family="Outfit, Manrope, sans-serif"
+        font-size="20"
+        font-weight="800"
+      >
+        Current setup
+      </text>
+      <text
+        fill="#10243a"
+        font-family="Manrope, Arial, sans-serif"
+        font-size="22"
+        font-weight="700"
+      >
+        <tspan x="734" y="720">Rightsizing + cleanup + storage tiering</tspan>
+      </text>
+      <text
+        fill="#4c6858"
+        font-family="Manrope, Arial, sans-serif"
+        font-size="17"
+      >
+        <tspan x="734" y="753">Swap tactics as needed</tspan>
+        <tspan x="734" y="778">Keep the cost goal in view</tspan>
+      </text>
+    </g>
+  </g>
+
+  <g
+    fill="none"
+    stroke="#17354d"
+    stroke-width="4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M551 302 C602 294, 639 293, 699 302" />
+    <path d="M550 316 C603 307, 640 308, 698 316" opacity="0.52" />
+    <path d="M684 288 l16 14 -21 8" />
+
+    <path d="M551 512 C604 504, 642 504, 700 512" />
+    <path d="M550 526 C605 517, 643 518, 700 526" opacity="0.52" />
+    <path d="M685 498 l15 14 -21 8" />
+
+    <path d="M551 722 C604 714, 642 714, 700 722" />
+    <path d="M550 736 C605 727, 643 728, 700 736" opacity="0.52" />
+    <path d="M685 708 l15 14 -21 8" />
+  </g>
+
+  <g filter="url(#shadow)" transform="rotate(-3 674 854)">
+    <rect
+      x="394"
+      y="808"
+      width="560"
+      height="92"
+      rx="22"
+      fill="url(#note)"
+      stroke="#80500a"
+      stroke-width="2.8"
+    />
+    <text
+      x="674"
+      y="850"
+      text-anchor="middle"
+      fill="#6f470b"
+      font-family="Outfit, Manrope, sans-serif"
+      font-size="22"
+      font-weight="800"
+    >
+      <tspan x="674" y="850">Keep the left side clear.</tspan>
+      <tspan x="674" y="878">Let the right side change.</tspan>
+    </text>
+  </g>
+</svg>

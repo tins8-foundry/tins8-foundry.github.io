@@ -1,12 +1,15 @@
 const POSTS = {
+  "20260411-the-missing-layer-is-why": {
+    file: "logbook/20260411-the-missing-layer-is-why.md",
+    fallbackTitle: "Most Companies Already Document How. What Goes Missing Is Why.",
+  },
   "20260407-goals-own-reconciliation-projects-are-interventions": {
     file: "logbook/20260407-goals-own-reconciliation-projects-are-interventions.md",
-    fallbackTitle:
-      "The Data Model For Automatable Agents, Planning, And Work Execution",
+    fallbackTitle: "A Data Model For Goals, Work, And Agents",
   },
   "20260317-why-governance-should-be-built-in-from-day-1": {
     file: "logbook/20260317-why-governance-should-be-built-in-from-day-1.md",
-    fallbackTitle: "Governance Must Be In The Model From Day 1",
+    fallbackTitle: "Why Governance Starts On Day 1",
   },
 };
 
@@ -246,12 +249,10 @@ function markActivePost(postKey) {
 
 async function loadPost() {
   const params = new URLSearchParams(window.location.search);
-  const requestedPost =
-    params.get("post") ||
-    "20260407-goals-own-reconciliation-projects-are-interventions";
+  const requestedPost = params.get("post") || "20260411-the-missing-layer-is-why";
   const postKey = POSTS[requestedPost]
     ? requestedPost
-    : "20260407-goals-own-reconciliation-projects-are-interventions";
+    : "20260411-the-missing-layer-is-why";
   const selected = POSTS[postKey];
   const postUrl = `https://tins8.at/logbook.html?post=${postKey}`;
 
@@ -289,7 +290,7 @@ async function loadPost() {
     const pageTitle = `${title} | The Logbook`;
     const pageDescription =
       meta.description ||
-      "The Logbook: a growing record of learnings and architectural formalization behind The Founders Control Plane.";
+      "The Logbook: notes on goals, work, and how The Founders Control Plane is built.";
 
     document.title = pageTitle;
     setMetaByName("description", pageDescription);
